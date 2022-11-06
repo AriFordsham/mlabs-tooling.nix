@@ -50,7 +50,6 @@ let
       responseFile = builtins.toFile "response-file" ''
         --optghc=-XFlexibleContexts
         --optghc=-Wwarn
-        --optghc=-fplugin-opt=PlutusTx.Plugin:defer-errors
       '';
       l = [
         "cardano-binary"
@@ -68,7 +67,7 @@ let
       packages = builtins.listToAttrs (builtins.map (name: {
         inherit name;
         value.components.library.setupHaddockFlags = [ "--haddock-options=@${responseFile}" ];
-        value.components.library.ghcOptions = [ "-XFlexibleContexts" "-Wwarn" "-fplugin-opt=PlutusTx.Plugin:defer-errors" ];
+        value.components.library.ghcOptions = [ "-XFlexibleContexts" "-Wwarn" ];
         value.components.library.extraSrcFiles = [ responseFile ];
       }) l);
     };
