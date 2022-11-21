@@ -16,8 +16,8 @@
   inputs = {
     haskell-nix.url = "github:input-output-hk/haskell.nix";
     nixpkgs.url = "github:NixOS/nixpkgs?ref=nixos-unstable";
-    ghc-next-packages.url = "github:input-output-hk/ghc-next-packages?ref=repo";
-    ghc-next-packages.flake = false;
+    cardano-haskell-packages.url = "github:input-output-hk/cardano-haskell-packages?ref=repo";
+    cardano-haskell-packages.flake = false;
     iohk-nix.url = "github:input-output-hk/iohk-nix";
     iohk-nix.flake = false;
     emanote.url = "github:srid/emanote/master";
